@@ -1,0 +1,20 @@
+Must be on UGASTRO network.
+Log into radiolab@quasar
+Password is on the board.
+
+import radiolab
+
+# Reset encoders to home position, outputs 0 on success or error code
+radiolab.pntHome()
+
+# Set to alt az position
+# Alt limit is 15-87 deg
+alt = 45.0
+az  = 180.0
+radiolab.pntTo(alt, az)
+
+#record data
+#recordDVM
+#showplot
+# note: sun should be decent looking sinusoid
+
