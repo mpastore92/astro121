@@ -7,8 +7,7 @@ import threading
 import argparse
 
 import ephem
-import radiolab
-
+import radiolab 
 def get_alt():
     """ Returns altitude within the acceptable range.
     Returns:
@@ -107,9 +106,16 @@ def main():
     logger.info('Start logging data')
     datad.start()
     
+    # Start plotting data or 
     if args.p:
         logger.info('Start plot')
-        radiolab.plotMeNow()
+        plotd = threading.Thread(target = radiolab.plotMeNow)
+        plotd.daemon = True
+        plotd.start()
+    
+    # Sleep for t seconds to gather data
+    time.sleep(args.t[0]+10)
+    logger.debug('Exiting')
 
 if __name__ == "__main__":
    main() 
