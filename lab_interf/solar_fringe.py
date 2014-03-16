@@ -84,7 +84,8 @@ def main():
     parser = argparse.ArgumentParser(description='Record solar fringe  data using the interferometer.')
     parser.add_argument('repoint_freq', type=float, help='time to wait before repointing (s)')
     parser.add_argument('record_len', type=float, help='total time to record (s)')
-    parser.add_argument('-p', '--plot', action='store_true', default=False, help='show real time plot')
+    parser.add_argument('-p', '--plot', action='store_true', default=False,
+            help='show real time plot, (requires X11 to be enabled)')
     parser.add_argument('-v', '--verbose', action='store_true', default=False, help='print  voltage measurements')
     args = parser.parse_args()
 
