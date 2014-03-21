@@ -18,14 +18,14 @@ def getAlt():
         float: altitude value of sun limited to the range [15,87]
     """
     logger = logging.getLogger('interf')
-    if sun.alt > 87:
+    if sun.alt *180/np.pi> 87:
         logger.warning('Detected alt above 87: %s', str(sun.alt))
         return 87
-    elif sun.alt < 15:
+    elif sun.alt*180/np.pi < 15:
         logger.warning('Detected alt below 15: %s', str(sun.alt))
         return 15
     else:
-        return sun.alt
+        return sun.alt*180/np.pi
 
 def recordData(fileName='data/'+OBSERVATION, sun=True, moon=False,
         recordLength=60.0, verbose=False, showPlot=False):
@@ -66,10 +66,15 @@ def controller(t=30.0):
     logger = logging.getLogger('interf')
     try:
         while(True):
+            # Update the time and recompute position
+            obs.date = ephem.now()
+            sun.compute(obs)
+
             logger.debug('Move to telescope to (alt, az): (%s,%s)',
                     str(getAlt()), str(sun.az))
-   #        radiolab.pntTo(sun.az, get_alt())
+            radiolab.pntTo(az=sun.az*180/np.pi, alt=getAlt())
             time.sleep(t)
+
     except Exception, e:
         logger.error('Re-pointing failed for (alt,az): (%d,%d)',
                 str(getAlt()),
@@ -84,21 +89,21 @@ def main():
     parser = argparse.ArgumentParser(description='Record solar fringe  data using the interferometer.')
     parser.add_argument('repoint_freq', type=float, help='time to wait before repointing (s)')
     parser.add_argument('record_len', type=float, help='total time to record (s)')
-    parser.add_argument('-p', '--plot', action='store_true', default=False,
-            help='show real time plot, (requires X11 to be enabled)')
+    parser.add_argument('-p', '--plot', action='store_true', default=False,help='show real time plot (requires X11 to be enabled)')
+
     parser.add_argument('-v', '--verbose', action='store_true', default=False, help='print  voltage measurements')
     args = parser.parse_args()
 
     # Log observer and sun position
     logger.debug('Observer Lat: %s',  str(obs.lat))
-    logger.debug('Observer Long: %s', str(obs.lat))
+    logger.debug('Observer Long: %s', str(obs.long))
     logger.debug('Observer Date: %s', str(obs.date))
     logger.debug('Sun alt: %s', str(sun.alt))
     logger.debug('Sun az: %s',  str(sun.az))
 
     # Start telescopes at home position
     logger.debug('Set to home position')
-    #radiolab.pntHome()
+    radiolab.pntHome()
 
     # Create a thread that periodically re-points the telescope
     controllerd = threading.Thread(target = controller,
@@ -117,8 +122,8 @@ def main():
     logger.debug('Start position controller')
     controllerd.start()
 
-    # Wait 5 seconds for telescopes to move and start recording
-    time.sleep(5)
+    # Wait 8 seconds for telescopes to move and start recording
+    time.sleep(8)
     datad.start()
 
     # Sleep for t seconds to gather data
