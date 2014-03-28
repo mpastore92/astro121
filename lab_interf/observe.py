@@ -28,9 +28,11 @@ OBS.date = ephem.now()
 SOURCES = {
     "sun":   ephem.Sun(),
     "moon":  ephem.Moon(),
-    "m17":   PointSource(OBS, ra=ephem.hours("18:20:26"), dec=ephem.degrees("16:10.6")),
-    "3C144": PointSource(OBS, ephem.hours("5:34:31.95"),  dec=ephem.degrees("22:00:51.1")),
-    "orion": PointSource(OBS, ephem.hours("5:35:17.3"),   dec=ephem.degrees("-05:24:28")),
+    "m17":   PointSource(OBS, ra=ephem.hours("18:20:26"),  dec=ephem.degrees("16:10.6")),
+    "3C144": PointSource(OBS, ephem.hours("5:34:31.95"),   dec=ephem.degrees("22:00:51.1")),
+    "orion": PointSource(OBS, ephem.hours("5:35:17.3"),    dec=ephem.degrees("-05:24:28")),
+    "3C405": PointSource(OBS, ephem.hours("19:59:28.357"), dec=ephem.degrees("40:44:02.10")),
+    "3C461": PointSource(OBS, ephem.hours("23:23:24"),     dec=ephem.degrees("58:48.9")),
 }
 
 def getAlt(source):
@@ -101,7 +103,7 @@ def controller(source, t=30.0):
             time.sleep(t)
 
     except Exception, e:
-        logger.error('Re-pointing failed for (alt,az): (%d,%d)',
+        logger.error('Re-pointing failed for (alt,az): (%s,%s)',
                 str(getAlt(source)),
                 str(source.az))
         logger.error(str(e))
@@ -160,8 +162,8 @@ def main():
     logger.debug('Observer Lat: %s',  str(OBS.lat))
     logger.debug('Observer Long: %s', str(OBS.long))
     logger.debug('Observer Date: %s', str(OBS.date))
-    logger.debug('%s alt: %s', args.source, str(source.alt))
-    logger.debug('%s az: %s',  args.source, str(source.az))
+    logger.debug('%s alt: %s', args.source, str(ephem.degrees(source.alt)))
+    logger.debug('%s az: %s',  args.source, str(ephem.degrees(source.az)))
 
     # Start telescopes at home position
     logger.debug('Set to home position')

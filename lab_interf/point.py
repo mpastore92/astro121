@@ -1,4 +1,4 @@
-import numpy
+import numpy as np
 
 class PointSource:
     """
@@ -33,8 +33,8 @@ class PointSource:
 
         # Convert to HA DEC
         toHD = np.array([
-            [np.cos(obs.sidereal_time()), np.sin(obs.sidereal_time()), 0],
-            [np.sin(obs.sidereal_time()), -np.cos(obs.sidereal_time()), 0],
+            [np.cos(self.obs.sidereal_time()), np.sin(self.obs.sidereal_time()), 0],
+            [np.sin(self.obs.sidereal_time()), -np.cos(self.obs.sidereal_time()), 0],
             [0, 0, 1]
         ])
 
