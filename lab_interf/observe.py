@@ -8,7 +8,6 @@ import argparse
 
 import ephem
 import radiolab
-from point import PointSource
 
 # TODO: Check output of radiolab.pntTo and check for errors
 
@@ -28,12 +27,26 @@ OBS.date = ephem.now()
 SOURCES = {
     "sun":   ephem.Sun(),
     "moon":  ephem.Moon(),
-    "m17":   PointSource(OBS, ra=ephem.hours("18:20:26"),  dec=ephem.degrees("16:10.6")),
-    "3C144": PointSource(OBS, ephem.hours("5:34:31.95"),   dec=ephem.degrees("22:00:51.1")),
-    "orion": PointSource(OBS, ephem.hours("5:35:17.3"),    dec=ephem.degrees("-05:24:28")),
-    "3C405": PointSource(OBS, ephem.hours("19:59:28.357"), dec=ephem.degrees("40:44:02.10")),
-    "3C461": PointSource(OBS, ephem.hours("23:23:24"),     dec=ephem.degrees("58:48.9")),
+    "m17":   ephem.FixedBody(),
+    "3C144": ephem.FixedBody(),
+    "orion": ephem.FixedBody(),
+    "3C405": ephem.FixedBody(),
+    "3C461": ephem.FixedBody(),
+
 }
+SOURCE_COORDS = {
+    "m17":   {'ra':ephem.hours("18:20:26"),     'dec':ephem.degrees("16:10.6")},
+    "3C144": {'ra':ephem.hours("5:34:31.95"),   'dec':ephem.degrees("22:00:51.1")},
+    "orion": {'ra':ephem.hours("5:35:17.3"),    'dec':ephem.degrees("-05:24:28")},
+    "3C405": {'ra':ephem.hours("19:59:28.357"), 'dec':ephem.degrees("40:44:02.10")},
+    "3C461": {'ra':ephem.hours("23:23:24"),     'dec':ephem.degrees("58:48.9")},
+}
+
+def initSource(name, source):
+    if name in SOURCE_COORDS:
+        source._ra    = SOURCE_COORDS['name']['ra']
+        source._dec   = SOURCE_COORDS['name']['dec']
+        source._epoch = '2000'
 
 def getAlt(source):
     """ Returns altitude in degrees within the acceptable range [ALT_MIN,
@@ -147,6 +160,9 @@ def main():
 
     # Select the source to observe
     source = SOURCES[args.source]
+
+    # Initialize point source RA and DEC
+    initSource(args.source, source)
 
     # Create standard file name for log and data files
     observation = args.source + "_" + time.strftime("%m-%d-%Y_%H%M%S")
