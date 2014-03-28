@@ -44,8 +44,8 @@ SOURCE_COORDS = {
 
 def initSource(name, source):
     if name in SOURCE_COORDS:
-        source._ra    = SOURCE_COORDS['name']['ra']
-        source._dec   = SOURCE_COORDS['name']['dec']
+        source._ra    = SOURCE_COORDS[name]['ra']
+        source._dec   = SOURCE_COORDS[name]['dec']
         source._epoch = '2000'
 
 def getAlt(source):
