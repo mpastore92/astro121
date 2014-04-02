@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import numpy as np
 import matplotlib.pyplot as plt
 import argparse
@@ -18,10 +19,20 @@ def main():
 
     try:
         data = np.load(args.filename)
-        plt.plot(data[args.key])
+        if args.fft:
+            plt.figure()
+            plt.subplot(211)
+            plt.plot( data[args.key] )
+            plt.subplot(212)
+            plt.plot( np.abs( np.fft.fftshift( np.fft.fft(data[args.key]) ) ) )
+            plt.show()
+        else:
+            plt.plot( data[args.key] )
+
         plt.show()
+
     except Exception, e:
-        print('could not load '+args.filename)
+       print('could not load '+args.filename)
 
 
 if __name__ == "__main__":
