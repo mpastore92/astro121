@@ -1,0 +1,13 @@
+2014-03-24 05:54:17,712 - DEBUG: Calculating position of orion
+2014-03-24 05:54:17,713 - DEBUG: Observer Lat: 37:52:23.5
+2014-03-24 05:54:17,713 - DEBUG: Observer Long: -122:15:26.3
+2014-03-24 05:54:17,713 - DEBUG: Observer Date: 2014/3/24 05:54:17
+2014-03-24 05:54:17,713 - DEBUG: orion alt: 29:48:01.0
+2014-03-24 05:54:17,714 - DEBUG: orion az: 125:39:35.3
+2014-03-24 05:54:17,714 - DEBUG: Set to home position
+2014-03-24 05:55:01,505 - DEBUG: Start position controller
+2014-03-24 05:55:01,509 - DEBUG: Move to telescope to (alt, az): ([[ 29.83113505]],[[ 2.19391452]])
+2014-03-24 05:55:09,508 - DEBUG: Recording data for 510.000000 seconds
+2014-03-24 05:55:41,496 - DEBUG: Move to telescope to (alt, az): ([[ 29.85917517]],[[ 2.19458523]])
+2014-03-24 05:56:14,794 - DEBUG: Move to telescope to (alt, az): ([[ 29.88229808]],[[ 2.19513888]])
+2014-03-24 05:56:48,088 - DEBUG: Move to telescope to (alt, az): ([[ 29.90611204]],[[ 2.19570961]])

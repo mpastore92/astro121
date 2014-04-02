@@ -1,0 +1,12 @@
+2014-03-27 13:24:49,180 - DEBUG: Calculating position of moon
+2014-03-27 13:24:49,180 - DEBUG: Observer Lat: 37:52:23.5
+2014-03-27 13:24:49,180 - DEBUG: Observer Long: -122:15:26.3
+2014-03-27 13:24:49,180 - DEBUG: Observer Date: 2014/3/27 13:24:49
+2014-03-27 13:24:49,181 - DEBUG: moon alt: 15:47:05.0
+2014-03-27 13:24:49,181 - DEBUG: moon az: 116:24:03.4
+2014-03-27 13:24:49,181 - DEBUG: Set to home position
+2014-03-27 13:25:25,584 - DEBUG: Start position controller
+2014-03-27 13:25:25,585 - DEBUG: Move to telescope to (alt, az): (15.8881845567,116:30:13.2)
+2014-03-27 13:25:25,605 - ERROR: ERROR: Alt is too low!
+2014-03-27 13:25:33,585 - DEBUG: Recording data for 14410.000000 seconds
+2014-03-27 17:25:43,263 - DEBUG: Exiting

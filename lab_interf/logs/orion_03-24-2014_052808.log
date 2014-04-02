@@ -1,0 +1,26 @@
+2014-03-24 05:28:08,324 - DEBUG: Calculating position of orion
+2014-03-24 05:28:08,324 - DEBUG: Observer Lat: 37:52:23.5
+2014-03-24 05:28:08,325 - DEBUG: Observer Long: -122:15:26.3
+2014-03-24 05:28:08,325 - DEBUG: Observer Date: 2014/3/24 05:28:08
+2014-03-24 05:28:08,325 - DEBUG: orion alt: 21:19:05.4
+2014-03-24 05:28:08,325 - DEBUG: orion az: -115:34:24.3
+2014-03-24 05:28:08,325 - DEBUG: Set to home position
+2014-03-24 05:28:46,929 - DEBUG: Start position controller
+2014-03-24 05:28:46,931 - DEBUG: Move to telescope to (alt, az): (21.2050753986,-2.01506906499)
+2014-03-24 05:28:54,933 - DEBUG: Recording data for 510.000000 seconds
+2014-03-24 05:29:29,128 - DEBUG: Move to telescope to (alt, az): (21.0769550916,-2.01273370007)
+2014-03-24 05:30:02,418 - DEBUG: Move to telescope to (alt, az): (20.9785341834,-2.01094465413)
+2014-03-24 05:30:35,708 - DEBUG: Move to telescope to (alt, az): (20.8800303795,-2.00915838151)
+2014-03-24 05:31:09,030 - DEBUG: Move to telescope to (alt, az): (20.778455373,-2.00732086551)
+2014-03-24 05:31:42,321 - DEBUG: Move to telescope to (alt, az): (20.6797846211,-2.00554018138)
+2014-03-24 05:32:15,611 - DEBUG: Move to telescope to (alt, az): (20.5810323046,-2.00376222908)
+2014-03-24 05:32:48,901 - DEBUG: Move to telescope to (alt, az): (20.4821988624,-2.00198699501)
+2014-03-24 05:33:22,192 - DEBUG: Move to telescope to (alt, az): (20.3802860776,-2.00016079465)
+2014-03-24 05:33:55,486 - DEBUG: Move to telescope to (alt, az): (20.2812892619,-1.9983910376)
+2014-03-24 05:34:28,772 - DEBUG: Move to telescope to (alt, az): (20.1822126332,-1.99662395765)
+2014-03-24 05:35:02,062 - DEBUG: Move to telescope to (alt, az): (20.0800506601,-1.99480611555)
+2014-03-24 05:35:35,353 - DEBUG: Move to telescope to (alt, az): (19.9808133069,-1.99304442932)
+2014-03-24 05:36:08,643 - DEBUG: Move to telescope to (alt, az): (19.8814974391,-1.99128537929)
+2014-03-24 05:36:41,933 - DEBUG: Move to telescope to (alt, az): (19.7821034776,-1.98952895194)
+2014-03-24 05:37:15,223 - DEBUG: Move to telescope to (alt, az): (19.6796163461,-1.98772202846)
+2014-03-24 05:37:24,916 - DEBUG: Exiting

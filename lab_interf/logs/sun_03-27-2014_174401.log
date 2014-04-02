@@ -1,0 +1,20 @@
+2014-03-27 17:44:01,363 - DEBUG: Calculating position of sun
+2014-03-27 17:44:01,364 - DEBUG: Observer Lat: 37:52:23.5
+2014-03-27 17:44:01,364 - DEBUG: Observer Long: -122:15:26.3
+2014-03-27 17:44:01,364 - DEBUG: Observer Date: 2014/3/27 17:44:01
+2014-03-27 17:44:01,364 - DEBUG: sun alt: 40:53:57.9
+2014-03-27 17:44:01,365 - DEBUG: sun az: 126:19:31.0
+2014-03-27 17:44:01,365 - DEBUG: Set to home position
+2014-03-27 17:44:35,566 - DEBUG: Start position controller
+2014-03-27 17:44:35,566 - DEBUG: Move to telescope to (alt, az): (40.9895190773,126:28:10.8)
+2014-03-27 17:44:43,565 - DEBUG: Recording data for 310.000000 seconds
+2014-03-27 17:45:15,556 - DEBUG: Move to telescope to (alt, az): (41.095298217,126:38:24.2)
+2014-03-27 17:45:48,846 - DEBUG: Move to telescope to (alt, az): (41.1823899591,126:46:51.7)
+2014-03-27 17:46:22,144 - DEBUG: Move to telescope to (alt, az): (41.2719542297,126:55:35.8)
+2014-03-27 17:46:55,434 - DEBUG: Move to telescope to (alt, az): (41.3587215378,127:04:06.0)
+2014-03-27 17:47:28,725 - DEBUG: Move to telescope to (alt, az): (41.4453249214,127:12:37.4)
+2014-03-27 17:48:02,015 - DEBUG: Move to telescope to (alt, az): (41.534387173,127:21:25.7)
+2014-03-27 17:48:35,306 - DEBUG: Move to telescope to (alt, az): (41.6206592924,127:29:59.8)
+2014-03-27 17:49:08,599 - DEBUG: Move to telescope to (alt, az): (41.7067709024,127:38:35.2)
+2014-03-27 17:49:41,890 - DEBUG: Move to telescope to (alt, az): (41.7927151727,127:47:12.0)
+2014-03-27 17:49:53,555 - DEBUG: Exiting

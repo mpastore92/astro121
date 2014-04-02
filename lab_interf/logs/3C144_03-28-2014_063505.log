@@ -1,0 +1,196 @@
+2014-03-28 06:35:05,097 - DEBUG: Calculating position of 3C144
+2014-03-28 06:35:05,097 - DEBUG: Observer Lat: 37:52:23.5
+2014-03-28 06:35:05,098 - DEBUG: Observer Long: -122:15:26.3
+2014-03-28 06:35:05,098 - DEBUG: Observer Date: 2014/3/28 06:35:04
+2014-03-28 06:35:05,098 - DEBUG: 3C144 alt: 22:18:23.4
+2014-03-28 06:35:05,099 - DEBUG: 3C144 az: 281:14:00.2
+2014-03-28 06:35:05,099 - DEBUG: Set to home position
+2014-03-28 06:35:41,501 - DEBUG: Start position controller
+2014-03-28 06:35:41,502 - DEBUG: Move to telescope to (alt, az): (22.190297651,281:18:58.5)
+2014-03-28 06:35:49,502 - DEBUG: Recording data for 28810.000000 seconds
+2014-03-28 06:37:54,786 - DEBUG: Move to telescope to (alt, az): (21.761264441,281:37:20.2)
+2014-03-28 06:39:58,079 - DEBUG: Move to telescope to (alt, az): (21.36171545,281:54:26.8)
+2014-03-28 06:42:00,523 - DEBUG: Move to telescope to (alt, az): (20.9690495822,282:11:16.5)
+2014-03-28 06:44:04,072 - DEBUG: Move to telescope to (alt, az): (20.5704021762,282:28:22.6)
+2014-03-28 06:46:07,364 - DEBUG: Move to telescope to (alt, az): (20.1754345346,282:45:20.2)
+2014-03-28 06:48:11,845 - DEBUG: Move to telescope to (alt, az): (19.7777382324,283:02:26.0)
+2014-03-28 06:50:16,329 - DEBUG: Move to telescope to (alt, az): (19.3773354678,283:19:40.2)
+2014-03-28 06:52:20,810 - DEBUG: Move to telescope to (alt, az): (18.9806432034,283:36:46.2)
+2014-03-28 06:54:24,094 - DEBUG: Move to telescope to (alt, az): (18.584471741,283:53:52.6)
+2014-03-28 06:56:28,583 - DEBUG: Move to telescope to (alt, az): (18.1888330333,284:10:59.1)
+2014-03-28 06:58:33,067 - DEBUG: Move to telescope to (alt, az): (17.79055275,284:28:14.5)
+2014-03-28 07:00:37,548 - DEBUG: Move to telescope to (alt, az): (17.3960188254,284:45:22.1)
+2014-03-28 07:02:42,029 - DEBUG: Move to telescope to (alt, az): (16.9988808912,285:02:38.5)
+2014-03-28 07:04:46,513 - DEBUG: Move to telescope to (alt, az): (16.6055080988,285:19:47.5)
+2014-03-28 07:06:50,993 - DEBUG: Move to telescope to (alt, az): (16.2127346555,285:36:57.3)
+2014-03-28 07:08:55,478 - DEBUG: Move to telescope to (alt, az): (15.8174135516,285:54:16.2)
+2014-03-28 07:10:59,967 - DEBUG: Move to telescope to (alt, az): (15.4258234386,286:11:27.9)
+2014-03-28 07:13:04,451 - DEBUG: Move to telescope to (alt, az): (15.0314124574,286:28:48.9)
+2014-03-28 07:15:08,940 - WARNING: Detected alt below 15: 14:38:26.6
+2014-03-28 07:15:08,940 - DEBUG: Move to telescope to (alt, az): (15,286:46:02.9)
+2014-03-28 07:15:08,940 - WARNING: Detected alt below 15: 14:38:26.6
+2014-03-28 07:17:12,224 - WARNING: Detected alt below 15: 14:15:03.3
+2014-03-28 07:17:12,225 - DEBUG: Move to telescope to (alt, az): (15,287:03:18.0)
+2014-03-28 07:17:12,225 - WARNING: Detected alt below 15: 14:15:03.3
+2014-03-28 07:19:15,509 - WARNING: Detected alt below 15: 13:51:54.3
+2014-03-28 07:19:15,509 - DEBUG: Move to telescope to (alt, az): (15,287:20:26.1)
+2014-03-28 07:19:15,509 - WARNING: Detected alt below 15: 13:51:54.3
+2014-03-28 07:21:18,797 - WARNING: Detected alt below 15: 13:28:47.8
+2014-03-28 07:21:18,798 - DEBUG: Move to telescope to (alt, az): (15,287:37:35.7)
+2014-03-28 07:21:18,798 - WARNING: Detected alt below 15: 13:28:47.8
+2014-03-28 07:23:22,082 - WARNING: Detected alt below 15: 13:05:32.5
+2014-03-28 07:23:22,082 - DEBUG: Move to telescope to (alt, az): (15,287:54:55.2)
+2014-03-28 07:23:22,082 - WARNING: Detected alt below 15: 13:05:32.5
+2014-03-28 07:25:25,370 - WARNING: Detected alt below 15: 12:42:31.2
+2014-03-28 07:25:25,370 - DEBUG: Move to telescope to (alt, az): (15,288:12:07.9)
+2014-03-28 07:25:25,371 - WARNING: Detected alt below 15: 12:42:31.2
+2014-03-28 07:27:28,655 - WARNING: Detected alt below 15: 12:19:32.5
+2014-03-28 07:27:28,655 - DEBUG: Move to telescope to (alt, az): (15,288:29:22.2)
+2014-03-28 07:27:28,655 - WARNING: Detected alt below 15: 12:19:32.5
+2014-03-28 07:29:31,935 - WARNING: Detected alt below 15: 11:56:36.6
+2014-03-28 07:29:31,935 - DEBUG: Move to telescope to (alt, az): (15,288:46:38.2)
+2014-03-28 07:29:31,936 - WARNING: Detected alt below 15: 11:56:36.6
+2014-03-28 07:31:35,220 - WARNING: Detected alt below 15: 11:33:32.4
+2014-03-28 07:31:35,220 - DEBUG: Move to telescope to (alt, az): (15,289:04:04.6)
+2014-03-28 07:31:35,220 - WARNING: Detected alt below 15: 11:33:32.4
+2014-03-28 07:33:38,512 - WARNING: Detected alt below 15: 11:10:42.3
+2014-03-28 07:33:38,512 - DEBUG: Move to telescope to (alt, az): (15,289:21:24.4)
+2014-03-28 07:33:38,513 - WARNING: Detected alt below 15: 11:10:42.3
+2014-03-28 07:35:41,800 - WARNING: Detected alt below 15: 10:47:55.2
+2014-03-28 07:35:41,801 - DEBUG: Move to telescope to (alt, az): (15,289:38:46.2)
+2014-03-28 07:35:41,801 - WARNING: Detected alt below 15: 10:47:55.2
+2014-03-28 07:37:45,085 - WARNING: Detected alt below 15: 10:25:00.1
+2014-03-28 07:37:45,085 - DEBUG: Move to telescope to (alt, az): (15,289:56:18.6)
+2014-03-28 07:37:45,085 - WARNING: Detected alt below 15: 10:25:00.1
+2014-03-28 07:39:48,365 - WARNING: Detected alt below 15: 10:02:19.3
+2014-03-28 07:39:48,366 - DEBUG: Move to telescope to (alt, az): (15,290:13:44.7)
+2014-03-28 07:39:48,366 - WARNING: Detected alt below 15: 10:02:19.3
+2014-03-28 07:41:51,750 - WARNING: Detected alt below 15: 9:39:41.8
+2014-03-28 07:41:51,750 - DEBUG: Move to telescope to (alt, az): (15,290:31:13.0)
+2014-03-28 07:41:51,750 - WARNING: Detected alt below 15: 9:39:41.8
+2014-03-28 07:43:55,038 - WARNING: Detected alt below 15: 9:16:56.7
+2014-03-28 07:43:55,039 - DEBUG: Move to telescope to (alt, az): (15,290:48:52.1)
+2014-03-28 07:43:55,039 - WARNING: Detected alt below 15: 9:16:56.7
+2014-03-28 07:45:58,331 - WARNING: Detected alt below 15: 8:54:26.2
+2014-03-28 07:45:58,331 - DEBUG: Move to telescope to (alt, az): (15,291:06:25.1)
+2014-03-28 07:45:58,331 - WARNING: Detected alt below 15: 8:54:26.2
+2014-03-28 07:48:01,615 - WARNING: Detected alt below 15: 8:31:59.4
+2014-03-28 07:48:01,616 - DEBUG: Move to telescope to (alt, az): (15,291:24:00.7)
+2014-03-28 07:48:01,616 - WARNING: Detected alt below 15: 8:31:59.4
+2014-03-28 07:50:04,904 - WARNING: Detected alt below 15: 8:09:36.3
+2014-03-28 07:50:04,904 - DEBUG: Move to telescope to (alt, az): (15,291:41:38.8)
+2014-03-28 07:50:04,904 - WARNING: Detected alt below 15: 8:09:36.3
+2014-03-28 07:52:08,288 - WARNING: Detected alt below 15: 7:47:06.4
+2014-03-28 07:52:08,289 - DEBUG: Move to telescope to (alt, az): (15,291:59:28.1)
+2014-03-28 07:52:08,289 - WARNING: Detected alt below 15: 7:47:06.4
+2014-03-28 07:54:11,669 - WARNING: Detected alt below 15: 7:24:51.6
+2014-03-28 07:54:11,669 - DEBUG: Move to telescope to (alt, az): (15,292:17:11.6)
+2014-03-28 07:54:11,669 - WARNING: Detected alt below 15: 7:24:51.6
+2014-03-28 07:56:14,961 - WARNING: Detected alt below 15: 7:02:41.1
+2014-03-28 07:56:14,962 - DEBUG: Move to telescope to (alt, az): (15,292:34:57.8)
+2014-03-28 07:56:14,962 - WARNING: Detected alt below 15: 7:02:41.1
+2014-03-28 07:58:18,242 - WARNING: Detected alt below 15: 6:40:24.5
+2014-03-28 07:58:18,242 - DEBUG: Move to telescope to (alt, az): (15,292:52:55.6)
+2014-03-28 07:58:18,242 - WARNING: Detected alt below 15: 6:40:24.5
+2014-03-28 08:00:21,526 - WARNING: Detected alt below 15: 6:18:23.5
+2014-03-28 08:00:21,527 - DEBUG: Move to telescope to (alt, az): (15,293:10:47.7)
+2014-03-28 08:00:21,527 - WARNING: Detected alt below 15: 6:18:23.5
+2014-03-28 08:02:24,811 - WARNING: Detected alt below 15: 5:56:27.7
+2014-03-28 08:02:24,811 - DEBUG: Move to telescope to (alt, az): (15,293:28:42.8)
+2014-03-28 08:02:24,811 - WARNING: Detected alt below 15: 5:56:27.7
+2014-03-28 08:04:28,099 - WARNING: Detected alt below 15: 5:34:26.7
+2014-03-28 08:04:28,100 - DEBUG: Move to telescope to (alt, az): (15,293:46:49.8)
+2014-03-28 08:04:28,100 - WARNING: Detected alt below 15: 5:34:26.7
+2014-03-28 08:06:31,392 - WARNING: Detected alt below 15: 5:12:42.3
+2014-03-28 08:06:31,392 - DEBUG: Move to telescope to (alt, az): (15,294:04:51.2)
+2014-03-28 08:06:31,392 - WARNING: Detected alt below 15: 5:12:42.3
+2014-03-28 08:08:34,672 - WARNING: Detected alt below 15: 4:51:04.1
+2014-03-28 08:08:34,673 - DEBUG: Move to telescope to (alt, az): (15,294:22:55.9)
+2014-03-28 08:08:34,673 - WARNING: Detected alt below 15: 4:51:04.1
+2014-03-28 08:10:37,957 - WARNING: Detected alt below 15: 4:29:32.8
+2014-03-28 08:10:37,957 - DEBUG: Move to telescope to (alt, az): (15,294:41:04.0)
+2014-03-28 08:10:37,957 - WARNING: Detected alt below 15: 4:29:32.8
+2014-03-28 08:12:41,237 - WARNING: Detected alt below 15: 4:07:58.6
+2014-03-28 08:12:41,238 - DEBUG: Move to telescope to (alt, az): (15,294:59:24.3)
+2014-03-28 08:12:41,238 - WARNING: Detected alt below 15: 4:07:58.6
+2014-03-28 08:14:44,518 - WARNING: Detected alt below 15: 3:46:42.9
+2014-03-28 08:14:44,518 - DEBUG: Move to telescope to (alt, az): (15,295:17:39.3)
+2014-03-28 08:14:44,518 - WARNING: Detected alt below 15: 3:46:42.9
+2014-03-28 08:16:47,806 - WARNING: Detected alt below 15: 3:25:36.2
+2014-03-28 08:16:47,807 - DEBUG: Move to telescope to (alt, az): (15,295:35:57.8)
+2014-03-28 08:16:47,807 - WARNING: Detected alt below 15: 3:25:36.2
+2014-03-28 08:18:51,095 - WARNING: Detected alt below 15: 3:04:29.2
+2014-03-28 08:18:51,095 - DEBUG: Move to telescope to (alt, az): (15,295:54:29.0)
+2014-03-28 08:18:51,095 - WARNING: Detected alt below 15: 3:04:29.2
+2014-03-28 08:20:54,375 - WARNING: Detected alt below 15: 2:43:43.5
+2014-03-28 08:20:54,376 - DEBUG: Move to telescope to (alt, az): (15,296:12:54.9)
+2014-03-28 08:20:54,376 - WARNING: Detected alt below 15: 2:43:43.5
+2014-03-28 08:22:57,657 - WARNING: Detected alt below 15: 2:23:10.2
+2014-03-28 08:22:57,681 - DEBUG: Move to telescope to (alt, az): (15,296:31:24.6)
+2014-03-28 08:22:57,682 - WARNING: Detected alt below 15: 2:23:10.2
+2014-03-28 08:25:00,968 - WARNING: Detected alt below 15: 2:02:51.0
+2014-03-28 08:25:00,969 - DEBUG: Move to telescope to (alt, az): (15,296:49:58.3)
+2014-03-28 08:25:00,969 - WARNING: Detected alt below 15: 2:02:51.0
+2014-03-28 08:27:04,249 - WARNING: Detected alt below 15: 1:42:38.0
+2014-03-28 08:27:04,249 - DEBUG: Move to telescope to (alt, az): (15,297:08:45.0)
+2014-03-28 08:27:04,249 - WARNING: Detected alt below 15: 1:42:38.0
+2014-03-28 08:29:07,533 - WARNING: Detected alt below 15: 1:22:53.0
+2014-03-28 08:29:07,534 - DEBUG: Move to telescope to (alt, az): (15,297:27:26.6)
+2014-03-28 08:29:07,534 - WARNING: Detected alt below 15: 1:22:53.0
+2014-03-28 08:31:10,818 - WARNING: Detected alt below 15: 1:03:28.6
+2014-03-28 08:31:10,818 - DEBUG: Move to telescope to (alt, az): (15,297:46:12.4)
+2014-03-28 08:31:10,819 - WARNING: Detected alt below 15: 1:03:28.6
+2014-03-28 08:33:14,107 - WARNING: Detected alt below 15: 0:44:18.4
+2014-03-28 08:33:14,107 - DEBUG: Move to telescope to (alt, az): (15,298:05:11.5)
+2014-03-28 08:33:14,107 - WARNING: Detected alt below 15: 0:44:18.4
+2014-03-28 08:35:17,391 - WARNING: Detected alt below 15: 0:25:44.3
+2014-03-28 08:35:17,391 - DEBUG: Move to telescope to (alt, az): (15,298:24:05.6)
+2014-03-28 08:35:17,392 - WARNING: Detected alt below 15: 0:25:44.3
+2014-03-28 08:37:20,672 - WARNING: Detected alt below 15: 0:07:39.9
+2014-03-28 08:37:20,672 - DEBUG: Move to telescope to (alt, az): (15,298:43:04.2)
+2014-03-28 08:37:20,672 - WARNING: Detected alt below 15: 0:07:39.9
+2014-03-28 08:39:23,956 - WARNING: Detected alt below 15: -0:09:51.7
+2014-03-28 08:39:23,957 - DEBUG: Move to telescope to (alt, az): (15,299:02:07.2)
+2014-03-28 08:39:23,957 - WARNING: Detected alt below 15: -0:09:51.7
+2014-03-28 08:41:27,249 - WARNING: Detected alt below 15: -0:26:56.0
+2014-03-28 08:41:27,249 - DEBUG: Move to telescope to (alt, az): (15,299:21:23.9)
+2014-03-28 08:41:27,249 - WARNING: Detected alt below 15: -0:26:56.0
+2014-03-28 08:43:30,537 - WARNING: Detected alt below 15: -0:43:14.9
+2014-03-28 08:43:30,538 - DEBUG: Move to telescope to (alt, az): (15,299:40:36.0)
+2014-03-28 08:43:30,538 - WARNING: Detected alt below 15: -0:43:14.9
+2014-03-28 08:45:33,834 - WARNING: Detected alt below 15: -0:58:56.8
+2014-03-28 08:45:33,834 - DEBUG: Move to telescope to (alt, az): (15,299:59:52.6)
+2014-03-28 08:45:33,834 - WARNING: Detected alt below 15: -0:58:56.8
+2014-03-28 08:47:37,126 - WARNING: Detected alt below 15: -1:14:11.1
+2014-03-28 08:47:37,127 - DEBUG: Move to telescope to (alt, az): (15,300:19:23.5)
+2014-03-28 08:47:37,127 - WARNING: Detected alt below 15: -1:14:11.1
+2014-03-28 08:49:40,415 - WARNING: Detected alt below 15: -1:28:48.3
+2014-03-28 08:49:40,415 - DEBUG: Move to telescope to (alt, az): (15,300:38:49.7)
+2014-03-28 08:49:40,415 - WARNING: Detected alt below 15: -1:28:48.3
+2014-03-28 08:51:43,695 - WARNING: Detected alt below 15: -1:43:05.6
+2014-03-28 08:51:43,696 - DEBUG: Move to telescope to (alt, az): (15,300:58:20.7)
+2014-03-28 08:51:43,696 - WARNING: Detected alt below 15: -1:43:05.6
+2014-03-28 08:53:46,980 - WARNING: Detected alt below 15: -1:57:18.3
+2014-03-28 08:53:46,980 - DEBUG: Move to telescope to (alt, az): (15,301:17:56.7)
+2014-03-28 08:53:46,980 - WARNING: Detected alt below 15: -1:57:18.3
+2014-03-28 08:55:50,272 - WARNING: Detected alt below 15: -2:12:00.1
+2014-03-28 08:55:50,272 - DEBUG: Move to telescope to (alt, az): (15,301:37:47.3)
+2014-03-28 08:55:50,273 - WARNING: Detected alt below 15: -2:12:00.1
+2014-03-28 08:57:53,565 - WARNING: Detected alt below 15: -2:27:47.0
+2014-03-28 08:57:53,565 - DEBUG: Move to telescope to (alt, az): (15,301:57:33.4)
+2014-03-28 08:57:53,565 - WARNING: Detected alt below 15: -2:27:47.0
+2014-03-28 08:59:56,957 - WARNING: Detected alt below 15: -2:46:44.8
+2014-03-28 08:59:56,957 - DEBUG: Move to telescope to (alt, az): (15,302:17:24.7)
+2014-03-28 08:59:56,958 - WARNING: Detected alt below 15: -2:46:44.8
+2014-03-28 09:02:00,246 - WARNING: Detected alt below 15: -3:16:48.7
+2014-03-28 09:02:00,246 - DEBUG: Move to telescope to (alt, az): (15,302:37:30.9)
+2014-03-28 09:02:00,246 - WARNING: Detected alt below 15: -3:16:48.7
+2014-03-28 09:04:03,530 - WARNING: Detected alt below 15: -4:13:21.9
+2014-03-28 09:04:03,530 - DEBUG: Move to telescope to (alt, az): (15,302:57:32.8)
+2014-03-28 09:04:03,531 - WARNING: Detected alt below 15: -4:13:21.9
+2014-03-28 09:06:06,819 - WARNING: Detected alt below 15: -4:52:06.9
+2014-03-28 09:06:06,819 - DEBUG: Move to telescope to (alt, az): (15,303:17:40.0)
+2014-03-28 09:06:06,819 - WARNING: Detected alt below 15: -4:52:06.9
+2014-03-28 09:08:10,103 - WARNING: Detected alt below 15: -5:21:25.7
+2014-03-28 09:08:10,103 - DEBUG: Move to telescope to (alt, az): (15,303:38:02.4)
+2014-03-28 09:08:10,104 - WARNING: Detected alt below 15: -5:21:25.7
