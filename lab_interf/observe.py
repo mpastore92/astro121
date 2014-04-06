@@ -125,6 +125,7 @@ def initLog(observation):
     FORMAT = '%(asctime)-15s - %(levelname)s: %(message)s'
     logging.basicConfig(level=logging.DEBUG)
     logger = logging.getLogger('interf')
+    #TODO: check if this works when running from a different directory
     fh = logging.FileHandler(os.getcwd()+'/logs/'+ observation +'.log')
     fh.setLevel(logging.DEBUG)
 
