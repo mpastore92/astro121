@@ -32,14 +32,14 @@ def make_title(raw):
     else:
         return str(raw)
 
-def generate_plot(data, show=False, dft=False, title_string=None, outfile=None):
+def generate_plot(data, dft=False, show=False, title=None, outfile=None):
     """Generate a plot of some dataset. Optionally shows the plot, its DFT, adds
     a title, and/or saves it as a .png file.
 
     Args:
     data (np.array): data to plot
-    show (boolean, optiona) show the plot, default false
     dft (boolean, optional): plot the DFT in a subplot, default false
+    show (boolean, optiona) show the plot, default false
     title (string, optional): plot title
     dft (string, optional): output file name to be saved as [outfile].png
     """
@@ -49,8 +49,8 @@ def generate_plot(data, show=False, dft=False, title_string=None, outfile=None):
         plt.plot(data)
         plt.xlabel('Time (s)')
 
-        if title_string:
-            plt.title(title_string)
+        if title:
+            plt.title(title)
 
         plt.subplot(212)
         plt.plot( np.abs( np.fft.fftshift( np.fft.fft(data) ) ) )
@@ -58,11 +58,11 @@ def generate_plot(data, show=False, dft=False, title_string=None, outfile=None):
 
     else:
         plt.plot( data )
-        if title_string:
-            plt.title(title_string)
+        if title:
+            plt.title(title)
 
     if outfile:
-        savefig(outfile+'.png')
+        plt.savefig(outfile+'.png')
 
     if show:
         plt.show()
@@ -84,7 +84,8 @@ def main():
 
     try:
         data = np.load(args.infile)[args.key]
-        generate_plot(data, args.fourier, make_title(args.infile), args.outfile)
+        generate_plot(data, show=True, dft=args.fourier,
+                title=make_title(args.infile), outfile=args.outfile)
 
     except Exception, e:
        print('could not load '+args.filename)

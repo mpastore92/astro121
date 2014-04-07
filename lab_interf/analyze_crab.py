@@ -5,16 +5,112 @@ import ephem
 from scipy import signal
 
 from plot import generate_plot
+START = 2000
+END = 8000
 
 def main():
     """
 
     """
-    point_source()
+    data = np.load('data/report/3C144_03-28-2014_001926.npz')['volts'][START:END]
+    plt.figure()
+    plt.plot(np.linspace(-1,1,len(data)), np.abs(np.fft.fftshift(np.fft.fft(data))))
+    plt.show()
 
-def point_source():
-    data = np.load('data/report/3C144_03-28-2014_001926.npz')['volts']
-    lst = np.load('data/report/3C144_03-28-2014_001926.npz')['lst']
+   #normalized_chunks = normalize_chunks(data, 1000)
+   #filtered_chunks = filter(normalized_chunks, debug=False)
+   #generate_plot(normalized, dft=True)
+
+    filtered = filter(data, debug=False)
+    normalized = normalize(filtered)
+    print len(normalized)
+   #generate_plot(filtered, show=True, dft=True)
+    #fit(data)
+   #fit(filtered)
+   #fit(normalized_chunks)
+    fit(normalized, debug=True)
+    plt.show()
+
+    #point_source()
+
+def filter(data, show=False, debug=False):
+    # Remove DC
+    data -= np.average(data)
+
+    if debug:
+        # Test filters
+        filtered = median_filter(data, 5)
+        plt.figure()
+        plt.plot(np.linspace(-1,1,len(data)), np.abs(np.fft.fftshift(np.fft.fft(data))))
+        plt.plot(np.linspace(-1,1,len(filtered)),
+            np.abs(np.fft.fftshift(np.fft.fft(filtered))))
+
+        filtered = median_filter(data, 9)
+        plt.plot(np.linspace(-1,1,len(filtered)),
+            np.abs(np.fft.fftshift(np.fft.fft(filtered))))
+
+        filtered = median_filter(data, 11)
+        plt.plot(np.linspace(-1,1,len(filtered)),
+            np.abs(np.fft.fftshift(np.fft.fft(filtered))))
+        plt.title('Testing Median Filter Window Sizes')
+        plt.legend(['Original','Window = 5', 'Window = 9', 'Window = 11'])
+        plt.xlabel('Frequency (Hz)')
+        plt.savefig('img/median_test.png')
+
+        plt.figure()
+        plt.plot(np.linspace(-1,1,len(data)), np.abs(np.fft.fftshift(np.fft.fft(data))))
+
+        filtered = bandpass(data, 0.01, 0.15, 1, 512)
+        plt.plot(np.linspace(-1,1,len(filtered)),
+            np.abs(np.fft.fftshift(np.fft.fft(filtered))))
+
+        filtered = bandpass(data, 0.02, 0.10, 1, 256)
+        plt.plot(np.linspace(-1,1,len(filtered)),
+            np.abs(np.fft.fftshift(np.fft.fft(filtered))))
+
+        plt.title('Testing Bandpass Filters')
+        plt.legend(['Original','0.1-0.15 Hz, 512 taps', '0.2-0.10 Hz, 256 taps'])
+        plt.xlabel('Frequency (Hz)')
+        plt.savefig('img/bandpass_test.png')
+        if show:
+            plt.show()
+
+    #filtered = median_filter(data, 9)
+    #filtered = bandpass(data, 0.195, 0.22, 1, 256)
+    #filtered = bandpass(data, 0.195, 0.21, 1, 256)
+
+    #filtered = bandpass(data, 0.195, 0.215, 1, 256)
+    filtered = bandpass(data, 0.04, 0.06, 1, 256)
+
+    plt.figure()
+    plt.plot(np.linspace(-1,1,len(filtered)),
+        np.abs(np.fft.fftshift(np.fft.fft(filtered))))
+    plt.show()
+    return filtered
+
+def bandpass(data, f1, f2, nyquist, numtaps=128, pass_zero=False):
+    h = signal.firwin(numtaps, [f1, f2], pass_zero=False, nyq=nyquist)
+    return signal.fftconvolve(data, h)
+
+def median_filter(data, window_size=11):
+    return signal.medfilt(data, window_size)
+
+def normalize(data):
+    return data/max(data)
+
+def normalize_chunks(data, size):
+    endpts = np.append(np.arange(size, len(data), size), len(data)+1)
+    start = 0
+    normalized = np.array([])
+    for end in endpts:
+        normalized = np.append(normalized, data[start:end]/max(data[start:end]))
+        start = end
+    return normalized
+
+def fit(data, debug=False):
+    lst = np.load('data/report/3C144_03-28-2014_001926.npz')['lst'][START:END]
+    data = data[(len(data)-len(lst))/2:-(len(data)-len(lst))/2]
+    generate_plot(data, dft=True)
 
     source = ephem.FixedBody()
     obs = ephem.Observer()
@@ -27,53 +123,42 @@ def point_source():
     source._epoch = ephem.J2000
     source.compute(obs)
 
-    lst_hr = np.array( [ephem.hours(l) for l in lst] )
-    hs = np.array(ephem.hours(source.ra) - lst_hr)
+    hs = np.array(ephem.hours(source.ra) - lst)
 
-    # Find a good section of data
-    # data = data[2000:8000]
+    # 'Brute force' least squares
+    lmbda = 2.5 # Wavelength lambda in cm
+    YBAR = []
+    By = np.linspace(700,1200,500)
+    A = []
+    S_SQ = []
 
-    # Remove DC offset, centers data about zero
-   #normalized = np.array([0,])
-   #for i in range(1,len(data),1000):
-   #    print i
-   #    seg = data[(i-1):i]
-   #    if len(seg)!=0:
-   #        np.append(normalized(seg/max(seg)))
-   #print len(data)
-   #print len(normalized)
+    # Iterate over baseline lengths in cm
+    for d_B in By:
+        C = 2 * np.pi * d_B/lmbda * np.cos(source.dec)
+        x1 = np.cos( C * np.sin(hs) )
+        x2 = np.sin( C * np.sin(hs) )
+        X = np.matrix([x1, x2])
 
-   # generate_plot(normalized, show=True, dft=True)
+        ybar, a, s_sq = least_squares(data, X)
+        S_SQ.append(s_sq)
+        ybar = np.array(ybar[:,0])
+        YBAR.append(ybar)
+        A.append(a)
 
-    data -= np.average(data)
-    data = np.append(np.zeros(6600), data[6600:])
-    generate_plot(data, show=True, dft=True)
+    Bopt = np.argmin(S_SQ)
+    if debug:
+        plt.figure()
+        plt.plot(By, S_SQ/max(S_SQ)*100)
+        plt.title('Normalized Residuals')
+        #plt.show()
 
-   ## Normalize data
-   #data /= max(data)
-
-   ## 'Brute force' least squares
-   #lmbda = 2.5 # Wavelength lambda
-   #YBAR = []
-   #A = []
-   #S_SQ = []
-
-   #for d_B in np.linspace(700,1200,50):
-   #    C = 2 * np.pi * d_B/lmbda * np.cos(source.dec)
-   #    x1 = np.cos( C * np.sin(hs) )
-   #    x2 = np.sin( C * np.sin(hs) )
-   #    X = np.matrix([x1, x2])
-
-   #    ybar, s_sq = least_squares(data, X)
-   #    S_SQ.append(s_sq)
-   #    ybar = np.array(ybar[:,0])
-   #    #print np.shape(ybar)
-   #    YBAR.append(ybar)
-   #   #print np.shape(X)
-   #   #print np.shape(np.transpose(X))
-
-
-   #generate_plot(YBAR, show=True, dft=True)
+        plt.figure()
+        plt.plot(data)
+        plt.plot(YBAR[Bopt])
+        plt.title('YBAR')
+        print By[Bopt]
+        print A[Bopt]
+    return YBAR[Bopt], A[Bopt], By[Bopt]
 
 def least_squares(data, X):
     #X = np.matrix([x**0, x, x**2])
@@ -89,7 +174,7 @@ def least_squares(data, X):
     YBAR = np.array(YBAR[:,0])
     DELY = Y - YBAR
     s_sq = np.sum(np.square(DELY))#np.dot(np.transpose(DELY),DELY/(1000-3))
-    return YBAR, s_sq
+    return YBAR, a, s_sq
 
 if __name__ == "__main__":
     main()
