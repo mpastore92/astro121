@@ -9,7 +9,11 @@ from processing import *
 
 
 def main():
-    base_title = "Sun on 04-22-2014 at 15:31:05\n"
+    base_title = "Sun on 04-02-2014 at 15:31:05\n"
+    data = np.load('data/report/sun_04-02-2014_153105.npz')['volts']
+    data -= np.average(data)
+    generate_plot(data, dft=True, title=base_title, outfile='img/sun/raw')
+
     START = 3800
     END = 6500
     print radius(5400,1)
@@ -28,7 +32,7 @@ def main():
     # Plot Bessel function
     plt.figure()
     plt.plot(fR, MFtheory)
-    plt.xlabel('Frequency \times Radians')
+    plt.xlabel('Frequency x Radians')
     plt.title('Bessel Function')
     plt.savefig('img/sun/bessel.png')
 

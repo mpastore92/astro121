@@ -44,22 +44,25 @@ def main():
        START = 2000
        END = 8000
        data = np.load('data/report/3C144_03-28-2014_001926.npz')['volts'][START:END]
+       data -= np.average(data)
        generate_plot(data-np.average(data), dft=True, title=base_title+"Segment of Original", outfile="img/crab/seg")
        filtered = filter_dec(data, debug=False)
-       generate_plot(normalized, dft=True, title=base_title+"Filtered and Normalized\nSegment", outfile="img/crab/baseline_filtered")
+       normalized = normalize(filtered)
+       generate_plot(normalized, dft=True, title=base_title+"Filtered and Normalized Segment", outfile="img/crab/baseline_filtered_seg")
        normalized = normalize(filtered)
        YBAR, A, By, S_SQ = fit_baseline(normalized, START, END, debug=False)
        plt.figure()
        plt.plot(normalized)
        plt.plot(YBAR)
-       plt.title('Least Squares Fit for Baseline\nSegment')
+       plt.title('Least Squares Fit for Baseline of Segment')
        plt.legend(['Filtered', 'Fit'])
        plt.savefig('img/crab/fit_baseline_seg.png')
 
        plt.figure()
        plt.plot(By, S_SQ/max(S_SQ))
-       plt.title('Normalized Residuals for Baseline Fit\nSegment')
+       plt.title('Normalized Residuals for Baseline Fit of Segment')
        plt.savefig('img/crab/residual_baseline_seg.png')
+       plt.show()
 
     if dec:
        START = 2000

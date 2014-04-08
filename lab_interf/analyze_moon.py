@@ -10,17 +10,19 @@ from processing import *
 
 def main():
     base_title = "Moon on 04-06-2014 beginning at 03:34:44\n"
+    data = np.load('data/report/moon_04-06-2014_033444.npz')['volts']
+    data -= np.average(data)
+    generate_plot(data, dft=True, title=base_title, outfile='img/moon/raw')
+
     START = 1000 #3800
     END = 10000
 
     data = np.load('data/report/moon_04-06-2014_033444.npz')['volts'][START:END]
     data -= np.average(data)
     data /= np.max(data)
-   #generate_plot(data, dft=True)
+
     filtered = filter_moon(data)
-   #generate_plot(filtered, dft=True)
-   #envelope = envelope_med(data, 101)
-   #generate_plot(envelope, dft=True, show=True)
+    generate_plot(filtered, dft=True, outfile='img/moon/filtered')
 
     MFtheory, fR = gen_MFtheory(10000, start=0, end=2)
     MFtheory /= max(MFtheory)
