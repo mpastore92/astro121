@@ -53,7 +53,8 @@ def generate_plot(data, dft=False, show=False, title=None, outfile=None):
             plt.title(title)
 
         plt.subplot(212)
-        plt.plot( np.abs( np.fft.fftshift( np.fft.fft(data) ) ) )
+        frange = np.linspace(-1,1,len(data))
+        plt.plot(frange, np.abs( np.fft.fftshift( np.fft.fft(data) ) ) )
         plt.xlabel('Frequency (Hz)')
 
     else:
