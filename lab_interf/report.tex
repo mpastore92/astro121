@@ -231,13 +231,111 @@ baseline.
   multiple point sources including Orion, the Crab Nebula, and M17 as well.
 
   \subsection{Data Processing}
+  Although the interferometer does correlate the signals received from the two
+  telescopes, the radiation from most astronomical sources is negligible
+  compared to other sources of electromagnetic radiation. while we were able to
+  identify peaks corresponding to each source, the SNR was relatively low for
+  all of the sources other than the sun. In order to process the data and
+  calculate the values of interest, we attempted a variety of filtering
+  techniques.
+
+  \subsubsection{Point Souce Data}
+  In order to isolate the frequencies corresponding to the point source, we
+  attempted to filter the data in a variety of ways. These included a median
+  filter to smooth the data, as well as band pass filters of varying bandwidth,
+  windowing functions, and numbers of coefficients. We also attempted zeroing
+  out entire ranges of values in the frequency domain and taking the inverse
+  Fourier transform.
+
+  The general method we used for processing the point source data consisted of
+  attempting to visually identify peaks corresponding to what were likely
+  frequencies from the observed source. We also experimented with a few other
+  ideas such as attempting to normalize the signal over a range of values, as
+  the expected signal should have been roughly a constant amplitude. We also
+  attempted analyzing subsections of the datasets for those in with some kind of
+  unexpected behavior in the time domain.
+
+  \subsubsection{Least Squares Fitting}
+  After filtering the raw data, we applied least squares to fit a known model
+  of the source to the measured values to determine the unknown parameters.
+
+  Ordinary least squares (OLS) corresponds to solving a simple optimization
+  problem of the form
+
+  \[\min{x} ||Ax - y||^2_2 \]
+
+  This model is useful for estimating solutions to problems for which $Ax=y$ is
+  not feasible. We there for project $y$ onto $Ax$ and attempt to minimize the
+  squared Euclidean distance between them. The closed form solution to this
+  problem is:
+
+  \[x* = (A^{T}A)^{-1}A^{T}y \]
+
+  In order to solve for the parameters corresponding to the equation for the
+  interferometer output, we applied least squares.
+
+  \[F(h_{s} = A\cos \left [C\sin(h_{s}\right] - B\sin \left
+  [C\sin(h_{s}\right]\\
+  C = \frac{B_{y}}{\lambda}\cos(\delta)
+  \]
+
+  We began by determining the known precessed declination of the source and
+  assuming the wavelength $\lambad = 2.5cm$. To solve for the baseline $B_{y}$,
+  we iterated over 500 values in the range of 700cm to 1200cm. For each value we
+  saved the residuals, and chose the value corresponding to the minimum residual
+  value as the optimal or \"true\" baseline length.
+
+  \subsubsection{Calculating diameter}
+  We used similar signal processing techniques to filter the data for the Sun
+  and the Moon. In the case of these data sets we attempted to preserve the
+  envelope of the data, as it contains the information necessary to calculate
+  radius.
+
+  We used a similar method of applying least squares as for the point source to
+  fit an equation of the following form:
+
+  \[F(t) = \cos \left (2\pi \frac{B_{y}}{\lambda} \cos(\delta)
+      sin(h_{s}) + \phi \right)\]
+
+  We attempted fitting both to the filtered data itself as well as its envelope
+  calculated by convolving the absolute value of the data with a low pass filter.
+  After obtaining this function by iterating over guesses of $\phi$, just as
+  solving when for $B_{y}$, we chose the corresponding value that minimized the
+  error term.
+
+  The goal of doing all of this was to fit a function to the data over a narrow
+  region to find the points at which it crosses 0. The envelope of the Sun and
+  the Moon signals are ideally Bessel functions, which are functions of  $R \cdot
+  F_{f}$. By determining a fringe frequency $F_{f}$ corresponding to the zero
+  crossing, we matched that $F_{f}$ to a value of $F_{f}$ on the $R \cdot
+  F_{f}$ axis of the Bessel function.
+
+  \[F_{f} = \left (\frac{B_{y}}{\lambda}\cos(\delta)\right ) \]
+
+  To match the Bessel function with the envelope of the data, we used trial and
+  error to shift it to a point which seemed to correspond to the measured data.
+  Because the Bessel function crosses the x axis at integer values we can solve
+  for the radius.
+
+  \[RF_{f}=k \\
+      R = \frac{k}{F_{f}} = \frac{\lambda}{B_{y}\cos(\delta)\cos(h_{s})}
+  \]
+
+  We then multiplied this value of the radius in degrees by 2 to determine the
+  diameter of the source.
+
+
+
+  solve for dec
+
+  pick good section of data
+  overlay Bessel function (trial and error)
 
 %=======================================================================================
 
 \section{Results \& Discussion}
 
 %=======================================================================================
-
 \section{Conclusion}
 
 Code and results are available online at: https://github.com/viyer/astro121

@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 import ephem
 from scipy import signal
 
+from processing import *
 from plot import generate_plot
+
 START = 2000
 END = 8000
 
@@ -88,24 +90,6 @@ def filter(data, show=False, debug=False):
     plt.show()
     return filtered
 
-def bandpass(data, f1, f2, nyquist, numtaps=128, pass_zero=False):
-    h = signal.firwin(numtaps, [f1, f2], pass_zero=False, nyq=nyquist)
-    return signal.fftconvolve(data, h)
-
-def median_filter(data, window_size=11):
-    return signal.medfilt(data, window_size)
-
-def normalize(data):
-    return data/max(data)
-
-def normalize_chunks(data, size):
-    endpts = np.append(np.arange(size, len(data), size), len(data)+1)
-    start = 0
-    normalized = np.array([])
-    for end in endpts:
-        normalized = np.append(normalized, data[start:end]/max(data[start:end]))
-        start = end
-    return normalized
 
 def fit(data, debug=False):
     lst = np.load('data/report/3C144_03-28-2014_001926.npz')['lst'][START:END]
@@ -159,22 +143,6 @@ def fit(data, debug=False):
         print By[Bopt]
         print A[Bopt]
     return YBAR[Bopt], A[Bopt], By[Bopt]
-
-def least_squares(data, X):
-    #X = np.matrix([x**0, x, x**2])
-    Y = np.transpose(np.matrix(data))
-
-    XX = np.dot(X,np.transpose(X))
-
-    XY = np.dot(X,Y)
-    XXI = np.linalg.inv(XX)
-
-    a = np.dot(XXI,XY)
-    YBAR = np.dot(np.transpose(X),a)
-    YBAR = np.array(YBAR[:,0])
-    DELY = Y - YBAR
-    s_sq = np.sum(np.square(DELY))#np.dot(np.transpose(DELY),DELY/(1000-3))
-    return YBAR, a, s_sq
 
 if __name__ == "__main__":
     main()
